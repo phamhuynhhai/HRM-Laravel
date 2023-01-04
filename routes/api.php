@@ -30,6 +30,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/register', [RegistrationController::class, 'register']);
+Route::post('/forgot', [RegistrationController::class, 'forgot']);
+Route::post('/reset_password', [RegistrationController::class, 'reset_password']);
 Route::apiResource('/employee', EmployeeController::class)->except('index', 'store');
 Route::post('/employee', [EmployeeController::class, 'store']);
 Route::get('listEmployee',[ ListEmployeeController::class, 'index']);
